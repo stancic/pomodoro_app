@@ -1,0 +1,124 @@
+//FONTS
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+//font-family: 'Oswald', sans-serif;
+//FONTS END
+
+
+html, body{
+    width:100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    background-color: tomato;
+}
+
+
+.header{
+    width: 100%;
+    height: 3em;
+    line-height: 2.3em;
+    display: block;
+    text-align: center;
+    position: relative;
+    top: 10%;
+    padding-bottom: 15px;
+    .header-title{
+        font-size: 2.3em;
+    }
+}
+
+.container{
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid black;
+    border-radius: 5%;
+    width: 40em;
+    height: 25em;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform:translate(-50%,-50%);
+    //Five's on top
+    .time-adder{
+        width: 100%;
+        position: relative;
+        text-align: center;
+        line-height: 2em;
+        padding-top: 15px;
+        .material-icons{
+            font-size: 1em;
+        }
+        .five{
+            padding: 0 10px 0 10px;
+        }
+        .time-change{
+            display: inline-block;
+            font-size: 2em;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .left{
+            margin-right: 25px;
+        }
+        .right{
+            margin-left: 25px;
+        }
+        //Five's on top end
+    }
+     //Time counter
+     .time-holder{
+        width: 65%;
+        height: 30%;
+        border: 1px solid black;
+        text-align: center;
+        position: relative;
+        top: 25%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%,-50%);
+        .text{
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%,-50%);
+            font-size: 3.2em;
+        }
+    }
+    //Time counter end
+
+    //Buttons
+    .buttons-holder{
+        display: block;
+        text-align: center;
+        height: 12%;
+        position: relative;
+        top: 25%;
+        .button{
+            padding: 1em 5em;
+            border-radius: 25px;
+            border: 1.3px solid rgb(0, 0, 0);
+            margin: 0 15px 0 15px;
+            background: linear-gradient(to left, transparent 50%, black 50%);
+            background-size: 200% 100%;
+            background-position: right bottom;
+            transition: all ease .3s;
+            cursor: pointer;
+            &:hover{
+                background-position: left bottom;
+                color: white;
+            }
+
+        }
+    }
+    //Buttons end
+
+}
+
+

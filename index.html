@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pomodoro Time Tracker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Styles and icons-->
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="shortcut icon" href="imgs/32356-tomato-icon.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+        <!--Scripts-->
+        <script src="scripts/script.js"></script>
+    </head>
+
+    <body>
+        <div class="header">
+            <div class="header-title">
+                <span>PomodoroTimer</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <!--Add 5 minutes to work or to 5 minutes to rest-->
+            <div class="time-adder">
+                <div class="time-change left">
+                    <span class="material-icons">keyboard_arrow_up</span>
+                    <span class="five">5</span>
+                    <span class="material-icons">keyboard_arrow_down</span>
+                </div>
+                <div class="time-change right">
+                    <span class="material-icons">keyboard_arrow_up</span>
+                    <span class="five">5</span>
+                    <span class="material-icons">keyboard_arrow_down</span>
+                </div>
+            </div>
+
+            <!--Time counter-->
+            <div class="time-holder">
+                <div class="text">
+                    <div class="minutes">25</div>
+                    <span>:</span>
+                    <div class="seconds">00</div>
+                </div>
+            </div>
+
+            <!--Buttons-->
+            <div class="buttons-holder">
+                <button class="button button-start">Start</button>
+                <button class="button button-pause">Pause</button>
+                <button class="button button-stop">Stop</button>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>
