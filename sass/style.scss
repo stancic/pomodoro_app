@@ -43,6 +43,7 @@ html, body{
     transform:translate(-50%,-50%);
     //Five's on top
     .time-adder{
+        user-select: none;
         width: 100%;
         position: relative;
         text-align: center;
