@@ -67,12 +67,7 @@ html, body{
                 cursor: pointer;
             }
         }
-        .left{
-            margin-right: 25px;
-        }
-        .right{
-            margin-left: 25px;
-        }
+    
         //Five's on top end
     }
      //Time counter
@@ -106,23 +101,23 @@ html, body{
         height: 12%;
         position: relative;
         top: 25%;
-        .button{
-            padding: 1em 5em;
-            border-radius: 25px;
-            border: 1.3px solid rgb(0, 0, 0);
-            margin: 0 15px 0 15px;
-            background: linear-gradient(to left, transparent 50%, rgb(36, 30, 30) 50%);
-            background-size: 200% 100%;
-            background-position: right bottom;
-            transition: all ease .3s;
-            font-weight: 700;
-            cursor: pointer;
-            &:hover{
-                background-position: left bottom;
-                color: white;
-            }
-
+    }
+    .button{
+        padding: 1em 5em;
+        border-radius: 25px;
+        border: 1.3px solid rgb(0, 0, 0);
+        margin: 0 15px 0 15px;
+        background: linear-gradient(to left, transparent 50%, rgb(36, 30, 30) 50%);
+        background-size: 200% 100%;
+        background-position: right bottom;
+        transition: all ease .3s;
+        font-weight: 700;
+        cursor: pointer;
+        &:hover{
+            background-position: left bottom;
+            color: white;
         }
+
     }
     //Buttons end
 
