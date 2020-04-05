@@ -18,18 +18,33 @@ let timer;
 let status;
 let tempSeconds;
 let tempMinutes;
+let tempHours;
+let alarmSound = new Audio();
+alarmSound.src = "../music/alarm.mp3";
+alarmSound.volume = 0.4;
+let container = document.querySelector(".text");
+let hoursDiv = document.createElement("div");
+let hours = 0;
+
 
 //passing value of minutes
 let minutes = document.querySelector(".minutes");
 let seconds = document.querySelector(".seconds");
 
 
-addToMinutes.addEventListener("click", addFiveMinutes);
+addToMinutes.addEventListener("click", ()=>{
+    addFiveMinutes();
+});
 removeFromMinutes.addEventListener("click", removeFiveMinutes);
+
+//creating hours
 
 
 rest.addEventListener("click", ()=>{
     minutes.innerHTML = "05";
+    seconds.innerHTML = "00";
+    clearInterval(timer);
+    start.disabled = false;
 });
 
 work.addEventListener("click", ()=>{
@@ -37,11 +52,20 @@ work.addEventListener("click", ()=>{
 });
 
 
-start.addEventListener("click", changeTime);
+start.addEventListener("click", ()=>{
+    changeTime();
+    start.disabled = true;
+});
 
-reset.addEventListener("click", resetTime);
+reset.addEventListener("click", ()=>{
+    resetTime();
+    start.disabled = false;
+});
 
-pause.addEventListener("click", pauseTime);
+pause.addEventListener("click", ()=>{
+    pauseTime();
+    start.disabled = false;
+});
 
 //FUNCTIONS
 
@@ -83,11 +107,20 @@ function changeTime(){
         if(tempSeconds == 59){
             tempMinutes--;
         }
-        if(tempMinutes == 0 && tempSeconds == 0){
-            status="clear";
-            clearInterval(timer);
+       
+        if(tempMinutes == 0 && tempSeconds == "00" && status == "ready"){
             tempMinutes = 25;
             tempSeconds = "00";
+            clearInterval(timer);
+            status = "";
+            start.disabled = false;
+        }
+        if(tempMinutes == 0 && tempSeconds == 0){
+            alarmSound.play();
+            status="clear";
+            tempMinutes = 5;
+            tempSeconds = "00";
+            status = "ready";
         }
         seconds.innerHTML = tempSeconds.toString();
         minutes.innerHTML = tempMinutes.toString();
@@ -108,6 +141,15 @@ function resetTime(){
     minutes.innerHTML = "25";
     seconds.innerHTML = "00";
     clearInterval(timer);
+}
+
+function addHours(){
+    if(parseInt(minutes.innerHTML) == 60 || parseInt(minutes.innerHTML) >= 60){
+        minutes.innerHTML = "00";
+        hoursDiv.classList.add("minutes");
+        hoursDiv.textContent = hours.toString() + ":";
+        container.prepend(hoursDiv);
+    }
 }
 //FUNCTIONS END
 
