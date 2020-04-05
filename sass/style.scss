@@ -101,8 +101,11 @@ html, body{
         height: 12%;
         position: relative;
         top: 25%;
+        
     }
-    .button{
+    .button,button[disabled]{
+        user-select: none;
+        color: black;
         padding: 1em 5em;
         border-radius: 25px;
         border: 1.3px solid rgb(0, 0, 0);
